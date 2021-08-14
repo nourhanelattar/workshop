@@ -1,0 +1,28 @@
+
+  
+<nav-tabs-component> </nav-tabs-component>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="card" *ngIf="oneNews">
+              <img class="card-img-top" [src]="oneNews.urlToImage">
+              <div class="card-body">
+                  <div class="social-icons">
+                    <mat-icon>favorite_border</mat-icon>
+                    <mat-icon>share</mat-icon> 
+                          
+
+                         
+                    
+                  </div>
+                  <h2 class="card-title"> {{oneNews.title}} </h2>
+                  <p class="card-text"> {{oneNews.content}} </p>
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+

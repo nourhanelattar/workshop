@@ -1,0 +1,42 @@
+
+<div class="container">
+   
+     
+    <nav-tabs-component></nav-tabs-component>
+
+    <search-nav-component></search-nav-component>
+
+
+      
+     
+    <div class="row">
+        <div class="col-sm12 col-md-6 col-lg-4" *ngFor="let News of newsList | slice: (page-1) * 12 : page * 12">
+            <div class="card">
+                <img class="card-img-top" [src]="News.urlToImage" alt="Card image cap">
+                <div class="card-body">
+                    <div class="social-icons">
+                        <mat-icon>favorite_border</mat-icon>
+                        <mat-icon>share</mat-icon>
+                    </div>
+                    <h2 class="card-title" [routerLink]="['/news-detail', News.id]" *ngIf="News.title.length>0">
+                        {{News.title.substring(0,20)+'...'}}
+                    </h2>
+                    <p class="card-text" *ngIf="News.description.length > 0"> {{News.description.substring(0,90)+'...'}} </p>
+                    <div class="date">
+                        <mat-icon class="icon">calendar_today</mat-icon>
+                        <p class="txt"> {{News.publishedAt | date:'EEEE d MMM y'}} </p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+
+  
+   
+    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="50"  [pageSize]="12" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+    
+   
+    
+</div>

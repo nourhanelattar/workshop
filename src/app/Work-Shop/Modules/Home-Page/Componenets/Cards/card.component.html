@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="row">
+        <ng-container  class="" *ngFor="let News of newList">
+            <div class="col-sm-12 col-md-6 col-lg-4 " *ngIf="News.showOnHomepage == true && News.description.length >0" >
+               <div class="card">
+                   <img class="card-img-top" [src]="News.urlToImage" alt="Card image cap">
+                   <div class="card-body">
+                       <div class="social-icons">
+                            <mat-icon>favorite_border</mat-icon>
+                            <mat-icon> share </mat-icon> 
+ 
+                       </div>
+                       <h2 class="card-title" [routerLink]="['/news-detail', News.id]" *ngIf="News.title.length > 40">{{News.title.substring(0,35)+'...'}}</h2>
+                       <p class="card-text" *ngIf="News.description.length > 100"> {{News.description.substring(0,90)+'...'}} </p>
+                        <div class="date" >
+                           <mat-icon class="icon">calendar_today</mat-icon>
+                           <p class="txt">{{News.publishedAt | date:'EEEE d MMM y'}} </p> 
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </ng-container>
+ 
+    </div>   
+</div>
+

@@ -1,0 +1,42 @@
+
+<div class="container" style="margin-bottom: 55px;">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"> 
+            <p>from</p> 
+            <input type="date">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"> 
+            <p>To</p>
+            <input type="date">
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2"> 
+            <p>category</p>
+            <select name="" id="">
+                <option value="" *ngFor="let category of categoryList">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="col-xs-4 col-sm-6 col-md-5 col-lg-5">
+            <div class="search-btn">
+                <input type="search" class="w-100" placeholder="search services">
+                <div>
+                    <mat-icon>search</mat-icon>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-xs-4 col-sm-6 col-md-1 col-lg-1">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="sort-btn"> Sortby
+                <mat-icon> swap_horiz </mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <span>A to Z</span>
+              </button>
+              <button mat-menu-item>
+                <span>Z to A</span>
+              </button>
+             
+            </mat-menu> 
+        </div>
+    </div> 
+</div>

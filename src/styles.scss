@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+@import './scss-variables.scss';
+$FontPathOpenSans: "../fonts/open-sans";
+
+html, body { min-height: 100vh; font-family: $FontPathOpenSans;}
+
+.card {
+
+    box-shadow: 0px 3px 6px #00000029;
+    border: none!important;
+    
+    & img{ height: 220px;}
+    & .card-title { text-transform: capitalize; font-size: 37px;cursor: pointer;}
+    & .card-text{color: $txtColor; font-size: 20px;margin-bottom: 54px;}
+    & .social-icons {
+        display: flex; justify-content: flex-end;color:$mainColor;
+        & mat-icon{cursor: pointer;}
+    }
+    & h2{line-height: 1.25;}
+    & .date{
+        display: flex;
+        & .icon{width: 19px;line-height: unset; color: #13BEFF; margin-right: 19px;}
+        & .txt{color: $secondaryTxtColor;font-weight: bold;font-size: 18px;}
+    }
+}
+
+.nav-tab{
+    margin-bottom: 10px;
+    & .link{
+        color: #0F3294;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    & .demd-link{
+        font-size: 18px;
+        color: #AFAFAF;
+        text-decoration: none;
+    }
+    & mat-icon{
+        color: #AFAFAF;
+        width: 7px;
+        height: 12px;
+        position: relative;
+        top: 6px;
+        margin: 0px 20px;
+    }
+}
+
+
+/* Importing Bootstrap SCSS file. */
